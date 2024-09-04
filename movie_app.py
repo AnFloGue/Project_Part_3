@@ -1,6 +1,6 @@
 import requests
 import subprocess
-from storage_json import StorageJson  # Ensure this import is present
+from storage_json import StorageJson
 
 class MovieApp:
     def __init__(self, storage):
@@ -81,6 +81,6 @@ class MovieApp:
             print("\nExiting the application.")
 
 if __name__ == "__main__":
-    storage = StorageJson('movies.json')  # Ensure this matches your storage implementation
+    storage = StorageJson('movies.json')
     app = MovieApp(storage)
     app.run()

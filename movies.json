@@ -3,79 +3,61 @@
         "title": "The Shawshank Redemption",
         "year": 1994,
         "rating": 9.5,
-        "poster": "shawshank_poster.jpg"
+        "poster": "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_SX300.jpg"
     },
     {
         "title": "Pulp Fiction",
         "year": 1994,
         "rating": 8.0,
-        "poster": "pulp_fiction_poster.jpg"
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjAxNDc3NDcxOV5BMl5BanBnXkFtZTcwNDc3NDcxNA@@._V1_SX300.jpg"
     },
     {
         "title": "The Room",
         "year": 2003,
         "rating": 3.6,
-        "poster": "the_room_poster.jpg"
+        "poster": "https://m.media-amazon.com/images/M/MV5BNzE2OTc1NDI5NV5BMl5BanBnXkFtZTcwNDc3NDcxNA@@._V1_SX300.jpg"
     },
     {
         "title": "The Godfather",
         "year": 1972,
         "rating": 9.2,
-        "poster": "godfather_poster.jpg"
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjAxNDc3NDcxOV5BMl5BanBnXkFtZTcwNDc3NDcxNA@@._V1_SX300.jpg"
     },
     {
         "title": "The Godfather: Part II",
         "year": 1974,
         "rating": 9.0,
-        "poster": "godfather_2_poster.jpg"
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjAxNDc3NDcxOV5BMl5BanBnXkFtZTcwNDc3NDcxNA@@._V1_SX300.jpg"
     },
     {
         "title": "The Dark Knight",
         "year": 2008,
         "rating": 9.0,
-        "poster": "dark_knight_poster.jpg"
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTU3NDkwMTQwMFkYjAxYTNhMDEyMDA4ZDAzMDFjMjAxMTgwMjUyXkEyXkFqcGdeQXVyNTQzNTAzOTI@._V1_SX300.jpg"
     },
     {
         "title": "12 Angry Men",
         "year": 1957,
         "rating": 8.9,
-        "poster": "12_angry_men_poster.jpg"
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTU3NDkwMTQwMFkYjAxYTNhMDEyMDA4ZDAzMDFjMjAxMTgwMjUyXkEyXkFqcGdeQXVyNTQzNTAzOTI@._V1_SX300.jpg"
     },
     {
         "title": "Everything Everywhere All At Once",
         "year": 2022,
         "rating": 8.9,
-        "poster": "everything_everywhere_poster.jpg"
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTU3NDkwMTQwMFkYjAxYTNhMDEyMDA4ZDAzMDFjMjAxMTgwMjUyXkEyXkFqcGdeQXVyNTQzNTAzOTI@._V1_SX300.jpg"
     },
     {
         "title": "Forrest Gump",
         "year": 1994,
         "rating": 8.8,
-        "poster": "forrest_gump_poster.jpg"
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTU3NDkwMTQwMFkYjAxYTNhMDEyMDA4ZDAzMDFjMjAxMTgwMjUyXkEyXkFqcGdeQXVyNTQzNTAzOTI@._V1_SX300.jpg"
     },
     {
         "title": "Star Wars: Episode V",
         "year": 1980,
         "rating": 8.7,
-        "poster": "star_wars_v_poster.jpg"
-    },
-    {
-        "title": "Angry Women",
-        "year": 1222,
-        "rating": 1.0,
-        "poster": "forrest_gump_poster.jpg"
-    },
-    {
-        "title": "Angry Women 2",
-        "year": 111,
-        "rating": 3.0,
-        "poster": "2134.jpg"
-    },
-    {
-        "title": "Movie_01",
-        "year": 12223,
-        "rating": 2.0,
-        "poster": "ef"
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTU3NDkwMTQwMFkYjAxYTNhMDEyMDA4ZDAzMDFjMjAxMTgwMjUyXkEyXkFqcGdeQXVyNTQzNTAzOTI@._V1_SX300.jpg"
     },
     {
         "title": "Captain Tsubasa Movie 03: Run to Catch the Tomorrow!",
@@ -100,5 +82,17 @@
         "year": 1997,
         "rating": 7.9,
         "poster": "https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg"
+    },
+    {
+        "title": "Furious 7",
+        "year": 2015,
+        "rating": 7.1,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTQxOTA2NDUzOV5BMl5BanBnXkFtZTgwNzY2MTMxMzE@._V1_SX300.jpg"
+    },
+    {
+        "title": "The Matrix",
+        "year": 1999,
+        "rating": 8.7,
+        "poster": "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg"
     }
 ]
