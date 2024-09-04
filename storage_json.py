@@ -1,38 +1,37 @@
-import os
 import json
 from istorage import IStorage
 
 class StorageJson(IStorage):
-    def __init__(self, file_path):
-        self.file_path = file_path
-        if not os.path.exists(self.file_path):
-            with open(self.file_path, 'w') as file:
-                json.dump([], file)
+    def __init__(self, filename):
+        self.filename = filename
 
-    def list_movies(self):
+    def _load_data(self):
         try:
-            with open(self.file_path, 'r') as file:
+            with open(self.filename, 'r') as file:
                 return json.load(file)
-        except json.JSONDecodeError:
+        except FileNotFoundError:
             return []
 
+    def _save_data(self, data):
+        with open(self.filename, 'w') as file:
+            json.dump(data, file, indent=4)
+
+    def list_movies(self):
+        return self._load_data()
+
     def add_movie(self, title, year, rating, poster):
-        movies = self.list_movies()
+        movies = self._load_data()
         movies.append({'title': title, 'year': year, 'rating': rating, 'poster': poster})
-        with open(self.file_path, 'w') as file:
-            json.dump(movies, file)
+        self._save_data(movies)
 
     def delete_movie(self, title):
-        movies = self.list_movies()
+        movies = self._load_data()
         movies = [movie for movie in movies if movie['title'] != title]
-        with open(self.file_path, 'w') as file:
-            json.dump(movies, file)
+        self._save_data(movies)
 
     def update_movie(self, title, rating):
-        movies = self.list_movies()
+        movies = self._load_data()
         for movie in movies:
             if movie['title'] == title:
                 movie['rating'] = rating
-                break
-        with open(self.file_path, 'w') as file:
-            json.dump(movies, file)
+        self._save_data(movies)

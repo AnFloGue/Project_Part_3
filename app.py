@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from storage_json import StorageJson
 import requests
+
 app = Flask(__name__)
 storage = StorageJson('movies.json')  # or StorageCsv('movies.csv')
 

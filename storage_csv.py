@@ -1,45 +1,41 @@
 import csv
-import os
 from istorage import IStorage
 
 class StorageCsv(IStorage):
-    def __init__(self, file_path):
-        self.file_path = file_path
-        if not os.path.exists(self.file_path):
-            with open(self.file_path, 'w') as file:
-                writer = csv.writer(file)
-                writer.writerow(['title', 'year', 'rating', 'poster'])
+    def __init__(self, filename):
+        self.filename = filename
+
+    def _load_data(self):
+        try:
+            with open(self.filename, 'r') as file:
+                reader = csv.DictReader(file)
+                return list(reader)
+        except FileNotFoundError:
+            return []
+
+    def _save_data(self, data):
+        with open(self.filename, 'w', newline='') as file:
+            fieldnames = ['title', 'year', 'rating', 'poster']
+            writer = csv.DictWriter(file, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(data)
 
     def list_movies(self):
-        movies = []
-        with open(self.file_path, 'r') as file:
-            reader = csv.DictReader(file)
-            for row in reader:
-                movies.append(row)
-        return movies
+        return self._load_data()
 
     def add_movie(self, title, year, rating, poster):
-        with open(self.file_path, 'a') as file:
-            writer = csv.writer(file)
-            writer.writerow([title, year, rating, poster])
+        movies = self._load_data()
+        movies.append({'title': title, 'year': year, 'rating': rating, 'poster': poster})
+        self._save_data(movies)
 
     def delete_movie(self, title):
-        movies = self.list_movies()
+        movies = self._load_data()
         movies = [movie for movie in movies if movie['title'] != title]
-        with open(self.file_path, 'w') as file:
-            writer = csv.writer(file)
-            writer.writerow(['title', 'year', 'rating', 'poster'])
-            for movie in movies:
-                writer.writerow([movie['title'], movie['year'], movie['rating'], movie['poster']])
+        self._save_data(movies)
 
     def update_movie(self, title, rating):
-        movies = self.list_movies()
+        movies = self._load_data()
         for movie in movies:
             if movie['title'] == title:
                 movie['rating'] = rating
-                break
-        with open(self.file_path, 'w') as file:
-            writer = csv.writer(file)
-            writer.writerow(['title', 'year', 'rating', 'poster'])
-            for movie in movies:
-                writer.writerow([movie['title'], movie['year'], movie['rating'], movie['poster']])
+        self._save_data(movies)

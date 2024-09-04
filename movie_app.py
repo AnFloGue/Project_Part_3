@@ -1,4 +1,6 @@
+import requests
 import subprocess
+from storage_json import StorageJson  # Ensure this import is present
 
 class MovieApp:
     def __init__(self, storage):
@@ -11,10 +13,21 @@ class MovieApp:
 
     def _command_add_movie(self):
         title = input("Enter movie title: ")
-        year = int(input("Enter release year: "))
-        rating = float(input("Enter rating: "))
-        poster = input("Enter poster URL: ")
-        self._storage.add_movie(title, year, rating, poster)
+        api_key = '4a1990ae'
+        response = requests.get(f'http://www.omdbapi.com/?t={title}&apikey={api_key}')
+        if response.status_code == 200:
+            movie_data = response.json()
+            if movie_data['Response'] == 'True':
+                title = movie_data['Title']
+                year = int(movie_data['Year'])
+                rating = float(movie_data['imdbRating'])
+                poster = movie_data['Poster']
+                self._storage.add_movie(title, year, rating, poster)
+                print(f"Movie '{title}' added successfully.")
+            else:
+                print(f"Movie not found: {movie_data['Error']}")
+        else:
+            print("Error fetching movie data")
 
     def _command_delete_movie(self):
         title = input("Enter movie title to delete: ")
@@ -66,3 +79,8 @@ class MovieApp:
                     print("Invalid choice. Please try again.")
         except KeyboardInterrupt:
             print("\nExiting the application.")
+
+if __name__ == "__main__":
+    storage = StorageJson('movies.json')  # Ensure this matches your storage implementation
+    app = MovieApp(storage)
+    app.run()
